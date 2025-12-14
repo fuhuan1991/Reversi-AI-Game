@@ -39,7 +39,7 @@
 }
 
 .board-container {
-  background-image: url('../asset/slate_2.jpeg');
+  background-image: url('../../asset/slate_2.jpeg');
   background-size: cover;
   border: var(--border-width) solid tan;
   border-color: #bda27e tan #c9ad86 #b19876;
@@ -101,11 +101,11 @@
 }
 
 .square.piece-B .piece {
-  background-image: url('../asset/B.png');
+  background-image: url('../../asset/B.png');
 }
 
 .square.piece-W .piece {
-  background-image: url('../asset/W.png');
+  background-image: url('../../asset/W.png');
 }
 
 .square.valid-move::after {
