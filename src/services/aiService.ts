@@ -1,11 +1,16 @@
 import { Board, SquareState } from '../types';
+import { getEnvironmentVariable } from '../helper';
 import OpenAI from "openai";
 
 export class AIService {
-  private openAIClient: OpenAI;
-  
-  constructor() {
-    this.openAIClient = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+  private openAIClient: OpenAI | undefined = undefined;
+
+  async getClient() {
+    if (!this.openAIClient) {
+      const apiKey = await getEnvironmentVariable('OPENAI_API_KEY');
+      this.openAIClient = new OpenAI({ apiKey });
+    }
+    return this.openAIClient;
   }
 
   async getAIMove(board: Board, aiPlayer: SquareState.B | SquareState.W, validMoves:{ row: number, col: number }[]): Promise<{row: number, col: number, reason: string}> {
@@ -13,7 +18,8 @@ export class AIService {
     console.log('----AI prompt');
     console.log(prompt);
 
-    const response = await this.openAIClient.chat.completions.create({
+    const client = await this.getClient();
+    const response = await client.chat.completions.create({
       model: "gpt-4.1-mini",
       messages: [
         { role: "user", content: prompt }
