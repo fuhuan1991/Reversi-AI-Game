@@ -62,19 +62,23 @@ This document defines the organization and folder structure for the Reversi Serv
 
 #### Services
 - **services/**: External service integrations
-  - AWS Bedrock AI integration
-  - AI move generation
-  - Prompt construction and response parsing
+  - **aiService.ts**: OpenAI integration for AI move generation
+  - AI prompt construction and response parsing
 
 ### Frontend (front_end/)
 - **index.html**: HTML entry point for the React application
-- **src/App.tsx**: Main React application component with game UI
+- **src/App.tsx**: Main React application component with game mode selection
+- **src/App.css**: Main application styles with responsive design
 - **src/main.tsx**: React application entry point and DOM rendering
-- **src/index.css**: Global CSS styles for the application
+- **src/index.css**: Global CSS styles with mobile-first responsive design
 - **src/constants.ts**: Frontend constants and configuration
 - **src/helper.ts**: Frontend utility functions for game logic
 - **src/types.ts**: Frontend TypeScript type definitions
 - **src/components/**: React components for game interface
+  - **GameBoard.tsx**: Interactive game board component
+  - **GameBoard.css**: Responsive board styling with CSS custom properties
+  - **AIGame.tsx**: AI vs Human game mode component
+  - **TwoPlayerGame.tsx**: Two-player game mode component
 
 ### Assets (front_end/asset/)
 - **B.png**: Black piece image for game board

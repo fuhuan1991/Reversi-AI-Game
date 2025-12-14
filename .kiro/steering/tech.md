@@ -6,29 +6,38 @@ This document outlines the technical foundation and conventions for the Reversi 
 - **Runtime**: Node.js (v20+)
 - **Package Manager**: npm
 - **Language**: TypeScript 5.2+
-- **Build Tool**: TypeScript Compiler (tsc)
-- **Dev Server**: ts-node
+- **Build Tool**: TypeScript Compiler (tsc) + Vite
+- **Dev Server**: ts-node (backend) + Vite (frontend)
 
 ## Tech Stack
-- **Language**: TypeScript
-- **Framework**: Express.js 4.x
+- **Backend Language**: TypeScript
+- **Backend Framework**: Express.js 4.x
+- **Frontend Framework**: React 18.x + TypeScript
+- **Frontend Build Tool**: Vite 5.x
+- **UI Library**: Ant Design (antd) 6.x
 - **Database**: None (stateless service - game state sent in requests)
 - **Testing**: Jest 29.x with ts-jest
-- **AWS Integration**: AWS SDK v3 (@aws-sdk/client-bedrock-runtime)
+- **AI Integration**: OpenAI API (GPT-4.1-mini)
 - **Environment**: dotenv for configuration
 
 ## Dependencies
 
 ### Production
 - `express` - Web framework for API endpoints
-- `@aws-sdk/client-bedrock-runtime` - AWS Bedrock AI integration
 - `dotenv` - Environment variable management
+- `openai` - OpenAI API client for AI move generation
+- `react` - Frontend UI framework
+- `react-dom` - React DOM rendering
+- `antd` - UI component library for notifications and messages
 
 ### Development
 - `typescript` - TypeScript compiler
 - `ts-node` - TypeScript execution for development
 - `jest` + `ts-jest` - Testing framework
+- `vite` - Frontend build tool and dev server
+- `@vitejs/plugin-react` - React plugin for Vite
 - `@types/*` - TypeScript type definitions
+- `supertest` - HTTP testing library
 
 ## Common Commands
 
@@ -36,14 +45,29 @@ This document outlines the technical foundation and conventions for the Reversi 
 # Install dependencies
 npm install
 
-# Run development server (with hot reload)
+# Run backend development server (with hot reload)
 npm run dev
 
-# Build for production
+# Run frontend development server
+npm run dev:front-end
+
+# Build entire project (backend + frontend)
 npm run build
+
+# Build backend only
+npm run build:server
+
+# Build frontend only
+npm run build:front-end
 
 # Start production server
 npm start
+
+# Run production build and start
+npm run prod
+
+# Preview built frontend
+npm run preview
 
 # Run tests (single run)
 npm test
@@ -54,9 +78,10 @@ npm run test:watch
 
 ## Environment Variables
 Required in `.env` file:
-- `AWS_REGION` - AWS region for Bedrock (e.g., us-east-1)
+- `AWS_REGION` - AWS region (e.g., us-east-1)
 - `AWS_ACCESS_KEY_ID` - AWS access key
 - `AWS_SECRET_ACCESS_KEY` - AWS secret key
+- `OPENAI_API_KEY` - OpenAI API key for AI move generation
 - `PORT` - Server port (optional, defaults to 3000)
 
 ## Code Standards

@@ -1,6 +1,6 @@
 # Reversi Service
 
-A TypeScript Express service for playing Reversi with AI via AWS Bedrock.
+A TypeScript Express service for playing Reversi with AI.
 
 ## Setup
 
@@ -12,7 +12,7 @@ npm run dev
 ## API Endpoints
 
 - `POST /api/game/move` - Process human player move
-- `POST /api/game/ai-move` - Get AI move via AWS Bedrock
+- `POST /api/game/ai-move` - Get AI move via AI
 - `GET /health` - Health check
 
 ## Development

@@ -152,7 +152,7 @@ router.post('/ai-move', async (req, res) => {
       });
     }
 
-    // Get AI move from Bedrock
+    // Get AI move from LLM
     const aiMove = await aiService.getAIMove(aiMoveRequest.board, aiMoveRequest.aiPlayer, validMoves);
     const isAiMoveValid = isMoveValid(aiMove.row, aiMove.col, aiMoveRequest.aiPlayer, aiMoveRequest.board)
 
