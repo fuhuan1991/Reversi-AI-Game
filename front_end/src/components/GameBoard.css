@@ -46,6 +46,7 @@
   border-style: solid;
   box-shadow: 0 0 6px 5px rgba(0, 0, 0, 0.3);
   border-radius: 4px;
+  overflow: hidden;
 }
 
 .row-index {
