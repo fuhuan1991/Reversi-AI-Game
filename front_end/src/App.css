@@ -1,0 +1,161 @@
+.app-container {
+  font-family: Arial, sans-serif;
+  background-image: url('../asset/wood.jpeg');
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 10px;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.mode-selector {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.mode-button {
+  padding: 12px 16px;
+  font-size: clamp(14px, 3vw, 16px);
+  border: 2px solid #007bff;
+  background-color: #007bff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 120px;
+  margin: 5px;
+}
+
+.mode-button:hover:not(:disabled) {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+.mode-button:disabled {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.mode-button + .mode-button {
+  margin-left: 5px;
+}
+
+.reset-button {
+  padding: 12px 20px;
+  font-size: clamp(14px, 3vw, 16px);
+  border: 2px solid #007bff;
+  background-color: #007bff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 120px;
+}
+
+.reset-button:hover:not(:disabled) {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+.reset-button:disabled {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.game-content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.app h1 {
+  color: #ccc;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.game-info {
+  color: #ccc;
+  margin-bottom: 15px;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.game-info p {
+  font-size: clamp(16px, 4vw, 24px);
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  line-height: 1.4;
+}
+
+.small-coin-B {
+  display: inline-block;
+  width: clamp(30px, 6vw, 40px);
+  height: clamp(30px, 6vw, 40px);
+  background-image: url('../asset/B.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  margin: 0px clamp(5px, 2vw, 10px) 0px 0px;
+}
+
+.small-coin-W {
+  display: inline-block;
+  width: clamp(30px, 6vw, 40px);
+  height: clamp(30px, 6vw, 40px);
+  background-image: url('../asset/W.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  margin: 0px 0px 0px clamp(5px, 2vw, 10px);
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 767px) {
+  .app-container {
+    padding: 5px;
+    background-attachment: scroll;
+  }
+  
+  .mode-selector {
+    margin-bottom: 15px;
+  }
+  
+  .mode-button {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 5px auto;
+  }
+  
+  .mode-button + .mode-button {
+    margin-left: auto;
+  }
+  
+  .game-info p {
+    word-wrap: break-word;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .app-container {
+    padding: 15px;
+  }
+}
+
+/* Desktop adjustments */
+@media (min-width: 1025px) {
+  .app-container {
+    padding: 20px;
+  }
+}
