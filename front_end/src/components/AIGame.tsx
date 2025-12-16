@@ -91,7 +91,7 @@ function AIGame({ onSwitchMode }: AIGameProps) {
           notification.info({
             title: 'Double move!',
             description: msg,
-            placement: 'topRight',
+            placement: 'bottomRight',
             duration: 6,
             icon: <ExclamationCircleOutlined style={{ color: '#E2231a' }} />,
           });
@@ -133,7 +133,7 @@ function AIGame({ onSwitchMode }: AIGameProps) {
         notification.info({
           title: 'AI Strategy',
           description: data.aiMove.reason,
-          placement: 'topRight',
+          placement: 'bottomRight',
           duration: 6,
           icon: <RobotOutlined style={{ color: '#108ee9' }} />,
         });
@@ -175,7 +175,7 @@ function AIGame({ onSwitchMode }: AIGameProps) {
           notification.info({
             title: 'Double move!',
             description: msg,
-            placement: 'topRight',
+            placement: 'bottomRight',
             duration: 6,
             icon: <ExclamationCircleOutlined style={{ color: '#E2231a' }} />,
           });
