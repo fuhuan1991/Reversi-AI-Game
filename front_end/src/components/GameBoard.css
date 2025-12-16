@@ -139,7 +139,7 @@
 
 /* CSS Custom Properties for responsive sizing */
 :root {
-  --square-size: clamp(35px, 8vw, 75px);
+  --square-size: clamp(40px, 11vw, 75px);
   --piece-size: calc(var(--square-size) * 0.85);
   --index-size: clamp(25px, 5vw, 40px);
   --index-height: clamp(20px, 4vw, 30px);
@@ -150,11 +150,7 @@
 
 /* Mobile-specific adjustments */
 @media (max-width: 480px) {
-  .game-board-container {
-    transform: scale(0.9);
-    transform-origin: center;
-  }
-  
+   */
   .square:hover:not(.disabled) {
     transform: scale(1.05);
   }
@@ -162,12 +158,8 @@
 
 /* Small mobile devices */
 @media (max-width: 360px) {
-  .game-board-container {
-    transform: scale(0.8);
-  }
-  
   :root {
-    --square-size: 32px;
+    --square-size: 40px;
     --piece-size: 27px;
     --index-size: 22px;
     --index-height: 18px;
@@ -180,7 +172,7 @@
 /* Tablet adjustments */
 @media (min-width: 768px) and (max-width: 1024px) {
   :root {
-    --square-size: 60px;
+    --square-size: 80px;
     --piece-size: 51px;
     --index-size: 35px;
     --index-height: 25px;
