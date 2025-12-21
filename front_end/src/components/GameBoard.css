@@ -150,7 +150,6 @@
 
 /* Mobile-specific adjustments */
 @media (max-width: 480px) {
-   */
   .square:hover:not(.disabled) {
     transform: scale(1.05);
   }
