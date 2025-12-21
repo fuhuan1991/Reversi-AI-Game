@@ -6,7 +6,7 @@ import { gameRouter } from './routes/game';
 const isDev = process.env.NODE_ENV !== 'production' && __dirname.includes('src');
 const app = express();
 
-const PORT = isDev ? (process.env.PORT || 3000) : 80;
+const PORT = isDev ? (process.env.PORT || 3000) : 8080;
 
 // Determine root path based on environment
 // In dev mode (ts-node): serve from front_end directory
