@@ -6,11 +6,7 @@ import { Board } from '../types';
 import { INITIAL_BOARD } from '../constants';
 import { getValidPositions, getCounts } from '../helper';
 
-interface TwoPlayerGameProps {
-  onSwitchMode?: () => void;
-}
-
-function TwoPlayerGame({ onSwitchMode }: TwoPlayerGameProps) {
+function TwoPlayerGame() {
   const [board, setBoard] = useState<Board>(INITIAL_BOARD);
   const [currentPlayer, setCurrentPlayer] = useState<'B' | 'W'>('B');
   const [textOnTop, setTextOnTop] = useState<string>('Black\'s turn');

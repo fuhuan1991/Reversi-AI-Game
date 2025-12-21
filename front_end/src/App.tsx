@@ -28,9 +28,9 @@ function App() {
       
       <div className="game-content">
         {gameMode === 'two-player' ? (
-          <TwoPlayerGame onSwitchMode={() => setGameMode('ai')} />
+          <TwoPlayerGame />
         ) : (
-          <AIGame onSwitchMode={() => setGameMode('two-player')} />
+          <AIGame />
         )}
       </div>
     </div>

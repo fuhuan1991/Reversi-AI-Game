@@ -1,19 +1,17 @@
 import { useState, useEffect } from 'react';
 import { message, notification } from 'antd';
-import { RobotOutlined, ExclamationCircleOutlined } from '@ant-design/icons';
+import { ExclamationCircleOutlined } from '@ant-design/icons';
+import TypeWriterEffect from "react-typewriter-effect";
 import GameBoard from './GameBoard';
 import { Board } from '../types';
 import { INITIAL_BOARD } from '../constants';
 import { getValidPositions, getCounts } from '../helper';
 
-interface AIGameProps {
-  onSwitchMode?: () => void;
-}
-
-function AIGame({ onSwitchMode }: AIGameProps) {
+function AIGame() {
   const [board, setBoard] = useState<Board>(INITIAL_BOARD);
   const [currentPlayer, setCurrentPlayer] = useState<'B' | 'W'>('B');
   const [textOnTop, setTextOnTop] = useState<string>('Black\'s turn');
+  const [textForAI, setTextForAI] = useState<string>('Make your move...');
   const [isProcessing, setIsProcessing] = useState(false);
   const [validPositions, setValidPositions] = useState<Set<string>>(new Set());
   const [blackCount, setBlackCount] = useState<number>(2);
@@ -126,18 +124,14 @@ function AIGame({ onSwitchMode }: AIGameProps) {
       const data = await response.json();
 
       // Basic notification about AI move
-      message.info('AI made a move at ' + (data.aiMove.row + 1) + ' - ' + (data.aiMove.col + 1));
+      let aiText = 'AI made a move at ' + (data.aiMove.row + 1) + ' - ' + (data.aiMove.col + 1);
       
       // Display the reason behind the move
       if (data.aiMove.reason) {
-        notification.info({
-          title: 'AI Strategy',
-          description: data.aiMove.reason,
-          placement: 'bottomRight',
-          duration: 6,
-          icon: <RobotOutlined style={{ color: '#108ee9' }} />,
-        });
+        aiText = aiText + '\n' + data.aiMove.reason;
       }
+
+      setTextForAI(aiText);
       
 
       if (data.newBoard) {
@@ -216,6 +210,13 @@ function AIGame({ onSwitchMode }: AIGameProps) {
           Black - Human &nbsp;&nbsp;&nbsp; {blackCount} : {whiteCount} &nbsp;&nbsp;&nbsp; AI - White
           <div className='small-coin-W'></div>
         </p>
+      </div>
+      <div className='type-writter'>
+        <TypeWriterEffect
+          text={textForAI}
+          key={textForAI}
+          typeSpeed={5}
+        />
       </div>
       <GameBoard 
         board={board} 
