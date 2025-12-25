@@ -159,7 +159,7 @@
 @media (max-width: 360px) {
   :root {
     --square-size: 40px;
-    --piece-size: 27px;
+    --piece-size: 32px;
     --index-size: 22px;
     --index-height: 18px;
     --index-font-size: 11px;
@@ -172,7 +172,7 @@
 @media (min-width: 768px) and (max-width: 1024px) {
   :root {
     --square-size: 80px;
-    --piece-size: 51px;
+    --piece-size: 64px;
     --index-size: 35px;
     --index-height: 25px;
     --index-font-size: 14px;
@@ -185,7 +185,7 @@
 @media (min-width: 1200px) {
   :root {
     --square-size: 80px;
-    --piece-size: 68px;
+    --piece-size: 64px;
     --index-size: 45px;
     --index-height: 35px;
     --index-font-size: 18px;
