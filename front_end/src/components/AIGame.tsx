@@ -128,7 +128,7 @@ function AIGame() {
       
       // Display the reason behind the move
       if (data.aiMove.reason) {
-        aiText = aiText + '\n' + data.aiMove.reason;
+        aiText = aiText + ' | Reason: ' + data.aiMove.reason;
       }
 
       setTextForAI(aiText);

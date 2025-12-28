@@ -50,15 +50,15 @@ export class AIService {
 You are a <Reversi> player, you are playing with the ${aiColor} pieces. There are 2 types of pieces, Black and White. All the pieces on the game board are defined in <BOARD> section. The board is 1-based indices.
 ### STRATEGY ###
 - A <CORNER> move is a move where [<ROW_NUMBER>,<COLUMN_NUMBER>] is [1,1], [1,8], [8,1], [8,8],
-- A <CORNER> move is the most valuable move, you must choose it if you found it.
 - A <EDGE> move is a move where <ROW_NUMBER> is 1 or 8, or  <COLUMN_NUMBER> is 1 or 8.
+- A <CORNER> move is the most valuable move, you must choose it if you found it. A <EDGE> move is the second-best move.
 - Try to capture the position that is hard to be captured by your opponent.
 - Try to choose a move that can flip the most opponent's pieces.
 
 ### YOUR TASK ###
 - You must choose your next move from <MOVE LIST> based on the <STRATEGY>.
 - <ROW_NUMBER> represents the row number of your move, <COLUMN_NUMBER> represents the column number of your move, <REASON> represents a short explanation why you make this move. 
-- If your move is not a <EDGE>, don't mention the word "edge" in <REASON>.
+- Claim your move is a <EDGE> or <CORNER> move only when it satify the condition in <STRATEGY>.
 - Return ONE final response with the JSON format in <OUTPUT FORMAT>
 
 ### OUTPUT FORMAT ###
