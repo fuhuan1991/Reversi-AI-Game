@@ -106,7 +106,11 @@ function TwoPlayerGame() {
       <h1>Reversi - Two Players</h1>
       <div className="game-info">
         <p>{textOnTop}</p>
-        <p>Black {blackCount} : {whiteCount} White</p>
+        <p>
+          <span className='small-coin-B'></span>
+          Black {blackCount} : {whiteCount} White
+          <span className='small-coin-W'></span>
+        </p>
       </div>
       <GameBoard 
         board={board} 

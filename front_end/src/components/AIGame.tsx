@@ -206,9 +206,9 @@ function AIGame() {
       <div className="game-info">
         <p>{textOnTop}</p>
         <p>
-          <div className='small-coin-B'></div>
+          <span className='small-coin-B'></span>
           Black - Human &nbsp;&nbsp;&nbsp; {blackCount} : {whiteCount} &nbsp;&nbsp;&nbsp; AI - White
-          <div className='small-coin-W'></div>
+          <span className='small-coin-W'></span>
         </p>
       </div>
       <div className='type-writter'>
